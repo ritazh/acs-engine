@@ -116,7 +116,7 @@ write_files:
     KUBELET_NODE_LABELS=role=agent,failure-domain.beta.kubernetes.io/region={{WrapAsVariable "location"}}
     KUBELET_POD_INFRA_CONTAINER_IMAGE={{WrapAsVariable "kubernetesPodInfraContainerSpec"}}
 {{if IsKubernetesGte16}}
-    KUBELET_FEATURE_GATES="\ --feature-gates=Accelerators=true"
+    KUBELET_FEATURE_GATES=--feature-gates=Accelerators=true
 {{end}}
     
 
