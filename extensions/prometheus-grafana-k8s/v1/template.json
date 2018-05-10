@@ -29,12 +29,6 @@
 			"metadata": {
 				"description": "Custom Parameter for Extension - for prometheus-grafana-k8s, this is empty"
 			}
-		},
-		"vmIndex": {
-			"type": "int",
-			"metadata": {
-				"description": "index in the pool of the current agent, used so that we can get the extension name right"
-			}
 		}
    },
    "variables": {  
@@ -47,7 +41,7 @@
       "dependsOn": [],
       "location": "[resourceGroup().location]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
-	  "name": "[concat(parameters('targetVMName'),'/cse', parameters('vmIndex'))]",
+	  "name": "[concat(parameters('targetVMName'),'/cse')]",
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
         "type": "CustomScript",
